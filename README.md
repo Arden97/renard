@@ -9,7 +9,7 @@ fasdfasfadsfasf  sdfasdfsdfasfsd
 -> ls
 test1.docx  test2  test3.txt  test4  test5
 ```
-## Prerequisites
+### Prerequisites
 For the script to work correctly, you will need a Click package. The easiest way to install it is:
 ```
 pip install click
