@@ -14,11 +14,11 @@ def size_sort(files, reverse):
     return list(file for file in file_size.keys())
 
 # Sort files based on arguments passed
-def sort(name, dir, num, inc, sort):
+def sort_files(name, dir, num, inc, sort):
     if(inc): 
         files = [file for file in os.listdir(dir)]
     else:
-        files = [file for file in os.listdir(dir) if os.path.isfile(dir+file)]
+        files = [file for file in os.listdir(dir) if os.path.isfile('{}{}'.format(dir, file))]
     
     if (sort):
         if (sort == 'date'):
@@ -41,7 +41,7 @@ def sort(name, dir, num, inc, sort):
 def rename(files, dir, name):
     for idx,file in list(enumerate(files, start = 1)):
         ext = os.path.splitext(file)[1]
-        os.rename(dir+file, dir+name+str(idx)+ext)
+        os.rename('{}{}'.format(dir, file), '{}{}{}{}'.format(dir,name,idx,ext))
 
 # Arguments and options
 # TODO: add feature to sort and rename files in subfolders as well
@@ -57,7 +57,7 @@ def main(name, dir, num, inc, sort):
     """
     Rename files in the directory, using naming conventions.
     """
-    files = sort(name, dir, num, inc, sort)
+    files = sort_files(name, dir, num, inc, sort)
     rename(files, dir, name)
 
 
