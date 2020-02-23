@@ -11,9 +11,7 @@ def size_sort(files, reverse):
         if (not reverse):
             file_size = {k:v for k,v in sorted(file_size.items(), key=lambda item:item[1])}
         else: file_size = {k:v for k,v in sorted(file_size.items(), key=lambda item:item[1], reverse=True)}
-    files = [file for file in file_size]
-    
-    return files
+    return list(file for file in file_size.keys())
 
 # Sort files based on arguments passed
 def sort(name, dir, num, inc, sort):
@@ -47,6 +45,7 @@ def rename(files, dir, name):
 
 # Arguments and options
 # TODO: add feature to sort and rename files in subfolders as well
+# TODO: windows support
 @click.command()
 @click.argument('name')
 @click.option('--dir', default=os.getcwd(), help = 'Directory, which contains files')
@@ -60,7 +59,6 @@ def main(name, dir, num, inc, sort):
     """
     files = sort(name, dir, num, inc, sort)
     rename(files, dir, name)
-
 
 
 if __name__ == "__main__":
