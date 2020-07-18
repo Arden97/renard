@@ -21,15 +21,11 @@ Run these commands in your terminal:
 -> cd /home/user/bin
 -> git clone https://github.com/Arden97/renard.git
 -> cd renard
--> chmod +x renard.py
+-> pip install --user .
 ```
-Add this to your shell config file (.zshrc in my case):
+
+### Run
 ```
-export PATH=$PATH:/home/arden/bin/renard
-```
-Now run:
-```
--> source ~/.zshrc
 -> renard.py --help
 ```
 Help message will show up. Here you can see detailed information about the options of the tool.
