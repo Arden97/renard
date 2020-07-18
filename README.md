@@ -26,6 +26,6 @@ Run these commands in your terminal:
 
 ### Run
 ```
--> renard.py --help
+-> renard --help
 ```
 Help message will show up. Here you can see detailed information about the options of the tool.
